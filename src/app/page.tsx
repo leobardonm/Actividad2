@@ -13,16 +13,21 @@ export default function Home() {
 
 function Counter() {
   const [counter, setCounter] = useState(0);
+  const [error, setError] = useState("");
 
   const handleIncrement = (e: React.FormEvent) => {
     e.preventDefault();
     setCounter(counter + 1);
+    setError("");
   }
 
   const handleDecrement = (e: React.FormEvent) => {
     e.preventDefault();
     if (counter > 0) {
       setCounter(counter - 1);
+      setError("");
+    } else {
+      setError("El contador no puede ser menor a 0");
     }
   }
 
@@ -32,10 +37,11 @@ function Counter() {
       <form className="flex flex-col items-center justify-center p-4 space-y-4">
         <button onClick={handleDecrement} className="bg-red-500 text-white p-2 rounded hover:bg-red-600">
           Reducir numero
-          </button>
+        </button>
         <button onClick={handleIncrement} className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
           Incrementar numero
-          </button>
+        </button>
+        {error && <p className="text-red-500">{error}</p>}
       </form>
     </div>
   );
