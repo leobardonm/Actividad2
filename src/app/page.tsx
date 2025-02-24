@@ -30,8 +30,12 @@ function Counter() {
     <div className="flex flex-col items-center justify-center h-full">
       <h1 className="text-4xl font-bold">{counter}</h1>
       <form className="flex flex-col items-center justify-center p-4 space-y-4">
-        <button onClick={handleDecrement} className="bg-red-500 text-white p-2 rounded hover:bg-red-600">Reducir numero</button>
-        <button onClick={handleIncrement} className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Incrementar numero</button>
+        <button onClick={handleDecrement} className="bg-red-500 text-white p-2 rounded hover:bg-red-600">
+          Reducir numero
+          </button>
+        <button onClick={handleIncrement} className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+          Incrementar numero
+          </button>
       </form>
     </div>
   );
